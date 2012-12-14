@@ -104,6 +104,7 @@ class RussianPostAPI {
       $outRecord->itemWeight               = round(floatval($rec->ItemParameters->Mass) / 1000, 3);
       $outRecord->declaredValue            = round(floatval($rec->FinanceParameters->Value) / 100, 2);
       $outRecord->collectOnDeliveryPrice   = round(floatval($rec->FinanceParameters->Payment) / 100, 2);
+      $outRecord->trackingNumber           = (string) $rec->ItemParameters->Barcode;
 
       $out[] = $outRecord;
     }
